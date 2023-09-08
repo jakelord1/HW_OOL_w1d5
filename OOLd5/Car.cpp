@@ -12,9 +12,9 @@ Car::Car()
 Car::Car(const char* m, const char* c, int y, double p)
 {
 	this->model = new char[strlen(m) + 1];
-	strcpy_s(model, strlen(m + 1), m);
+	strcpy_s(model, strlen(m)+1, m);
 	this->color = new char[strlen(c) + 1];
-	strcpy_s(color, strlen(c + 1), c);
+	strcpy_s(color, strlen(c)+1, c);
 	this->year = y;
 	this->price = p;
 }
@@ -34,14 +34,14 @@ void Car::Input()
 		delete[] model;
 	}
 	this->model = new char[strlen(buff) + 1];
-	strcpy_s(model, strlen(buff + 1), buff);
+	strcpy_s(model, strlen(buff) + 1, buff);
 	cout << endl << "Enter Color:";
 	cin >> buff;
 	if (color != nullptr) {
 		delete[] color;
 	}
 	this->color = new char[strlen(buff) + 1];
-	strcpy_s(color, strlen(buff + 1), buff);
+	strcpy_s(color, strlen(buff) + 1, buff);
 	cout << endl << "Enter Year:";
 	cin >> year;
 	cout << endl << "Enter Price:";
@@ -79,7 +79,7 @@ void Car::SetModel(const char* m)
 		delete[] model;
 	}
 	this->model = new char[strlen(m) + 1];
-	strcpy_s(model, strlen(m + 1), m);
+	strcpy_s(model, strlen(m) + 1, m);
 }
 
 void Car::SetColor(const char* c)
@@ -88,7 +88,7 @@ void Car::SetColor(const char* c)
 		delete[] color;
 	}
 	this->color = new char[strlen(c) + 1];
-	strcpy_s(color, strlen(c + 1), c);
+	strcpy_s(color, strlen(c) + 1, c);
 }
 
 void Car::SetYear(int y)
